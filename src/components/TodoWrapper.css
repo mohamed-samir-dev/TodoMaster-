@@ -1,0 +1,348 @@
+.todo-wrapper {
+    min-height: 100vh;
+    padding: 2rem 1rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.todo-container {
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+}
+
+.todo-header {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    color: white;
+    padding: 3rem 2rem 2rem;
+    text-align: center;
+    position: relative;
+}
+
+.todo-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.3;
+}
+
+.todo-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0 0 0.5rem 0;
+    position: relative;
+    z-index: 1;
+}
+
+.todo-subtitle {
+    font-size: 1.1rem;
+    margin: 0;
+    opacity: 0.9;
+    position: relative;
+    z-index: 1;
+}
+
+.todo-form-section {
+    padding: 2rem;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.todo-stats {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1.5rem 2rem;
+    background: #f8f9fa;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.stats-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.stats-number {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #4facfe;
+}
+
+.stats-label {
+    font-size: 0.875rem;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.todo-filters {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1.5rem 2rem;
+    background: #f8f9fa;
+    border-bottom: 1px solid #e0e0e0;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 0.5rem 1rem;
+    border: 2px solid #ddd;
+    background: white;
+    color: #666;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.filter-btn:hover {
+    border-color: #4facfe;
+    color: #4facfe;
+    transform: translateY(-1px);
+}
+
+.filter-btn.active {
+    background: #4facfe;
+    border-color: #4facfe;
+    color: white;
+    box-shadow: 0 4px 12px rgba(79, 172, 254, 0.3);
+}
+
+.clear-completed-btn {
+    padding: 0.5rem 1rem;
+    border: 2px solid #ff6b6b;
+    background: white;
+    color: #ff6b6b;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-left: 1rem;
+}
+
+.clear-completed-btn:hover {
+    background: #ff6b6b;
+    color: white;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(255, 107, 107, 0.3);
+}
+
+.todo-list {
+    max-height: 500px;
+    overflow-y: auto;
+    padding: 1rem 0;
+}
+
+.todo-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.todo-list::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.todo-list::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 3px;
+}
+
+.todo-list::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}
+
+.todo-item-wrapper {
+    margin: 0.5rem 1rem;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.todo-item-wrapper:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.empty-state {
+    text-align: center;
+    padding: 4rem 2rem;
+    color: #666;
+}
+
+.empty-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    opacity: 0.5;
+}
+
+.empty-state h3 {
+    font-size: 1.5rem;
+    margin: 0 0 1rem 0;
+    color: #333;
+}
+
+.empty-state p {
+    font-size: 1rem;
+    margin: 0;
+    opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+    .todo-wrapper {
+        padding: 1rem 0.5rem;
+    }
+    
+    .todo-container {
+        border-radius: 15px;
+        margin: 0;
+    }
+    
+    .todo-header {
+        padding: 2rem 1rem 1.5rem;
+    }
+    
+    .todo-title {
+        font-size: 2rem;
+    }
+    
+    .todo-subtitle {
+        font-size: 1rem;
+    }
+    
+    .todo-form-section {
+        padding: 1.5rem 1rem;
+    }
+    
+    .todo-stats {
+        gap: 1rem;
+        padding: 1rem;
+    }
+    
+    .stats-number {
+        font-size: 1.25rem;
+    }
+    
+    .todo-filters {
+        padding: 1rem;
+        gap: 0.25rem;
+    }
+    
+    .filter-btn,
+    .clear-completed-btn {
+        font-size: 0.75rem;
+        padding: 0.4rem 0.8rem;
+    }
+    
+    .clear-completed-btn {
+        margin-left: 0.5rem;
+        margin-top: 0.5rem;
+    }
+    
+    .todo-list {
+        max-height: 400px;
+    }
+    
+    .todo-item-wrapper {
+        margin: 0.5rem 0.5rem;
+    }
+    
+    .empty-state {
+        padding: 3rem 1rem;
+    }
+    
+    .empty-icon {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .todo-stats {
+        flex-direction: row;
+        gap: 1.5rem;
+    }
+    
+    .todo-filters {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    
+    .filter-btn,
+    .clear-completed-btn {
+        width: 200px;
+        margin: 0;
+    }
+    
+    .clear-completed-btn {
+        margin-top: 0.5rem;
+    }
+    
+    .todo-title {
+        font-size: 1.75rem;
+    }
+    
+    .todo-subtitle {
+        font-size: 0.9rem;
+    }
+    
+    .stats-item {
+        min-width: 60px;
+    }
+    
+    .stats-number {
+        font-size: 1.1rem;
+    }
+    
+    .stats-label {
+        font-size: 0.75rem;
+    }
+    
+    .empty-state {
+        padding: 2rem 1rem;
+    }
+    
+    .empty-icon {
+        font-size: 2.5rem;
+    }
+    
+    .empty-state h3 {
+        font-size: 1.25rem;
+    }
+    
+    .empty-state p {
+        font-size: 0.9rem;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.todo-item-wrapper {
+    animation: fadeIn 0.3s ease-out;
+}
+.filter-btn:focus,
+.clear-completed-btn:focus {
+    outline: 2px solid #4facfe;
+    outline-offset: 2px;
+}
+
